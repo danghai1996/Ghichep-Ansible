@@ -206,5 +206,3 @@ Check theo host:
 **Lưu ý:** Nếu tồn tại tên group và tên host giống nhau, ta sẽ thấy có cảnh báo như sau:
 
 <img src="..\images\Screenshot_7.png">
-
-# 3. Thực hành 1 số module cơ bản
