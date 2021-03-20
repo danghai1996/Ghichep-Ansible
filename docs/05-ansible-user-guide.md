@@ -166,7 +166,43 @@ Server version: Apache/2.4.29 (Ubuntu)
 Server built:   2020-08-12T21:33:25
 ```
 
-Có thể kiểm tra trên các node việc cài đặt `apache2`
+Có thể kiểm tra trên các node việc cài đặt `apache2`.
+
+## 2.3. User và Group
+Module `user` cho phép dễ dàng tạo và thao tác các tài khoản người dùng hiện có, cũng như xóa các tài khoản người dùng đang tồn tại
+
+```
+# Tạo 1 user kèm password
+ansible all -m user -a "name=<tên-user> password=<crypted password here>"
+
+# Xóa user
+ansible all -m user -a "name=<tên-user> state=absent"
+```
+
+## 2.4. Quản lý dịch vụ
+Khởi động dịch vụ
+```
+ansible all -m service -a "name=<service_name> state=started"
+```
+
+Khởi động lại dịch vụ
+```
+ansible all -m service -a "name=<service_name> state=restarted"
+```
+
+Stop dịch vụ
+```
+ansible all -m service -a "name=<service_name> state=stopped"
+```
+
+## 2.5. Thu thập dữ liệu các node
+Lấy thông tin các node bạn muốn:
+```
+ansible all -m setup
+```
+
+# 3. Làm việc với Inventory
+Vị trí file inventory mặc định: `/etc/ansible/hosts`
 
 
 
